@@ -131,12 +131,16 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
     animation: bounce-in-top 1.1s both;
+    width: 300px;
+    & > img {
+        width: 100%;
+    }
 `;
 
 export const Title = styled.div`
     animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both;
     animation-delay: 1.1s;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: bold;
     font-family: 'Mungyeong-Gamhong-Apple';
     color: #3ebeee;

@@ -6,7 +6,7 @@ function SplashScreenRoute() {
   return (
     <>
         <Routes>
-            <Route path='/' element={ SplashScreenPage } />
+            <Route path='/' element={ <SplashScreenPage /> } />
         </Routes>
     </>
   )
