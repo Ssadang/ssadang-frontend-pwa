@@ -112,6 +112,12 @@ export const GlobalStyle = createGlobalStyle`
             filter:blur(0);opacity:1;
         }
     }
+    @font-face {
+    font-family: 'Mungyeong-Gamhong-Apple';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/Mungyeong-Gamhong-Apple.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 `;
 
 export const Container = styled.div`
@@ -132,5 +138,6 @@ export const Title = styled.div`
     animation-delay: 1.1s;
     font-size: 4em;
     font-weight: bold;
+    font-family: 'Mungyeong-Gamhong-Apple';
     color: #3ebeee;
 `;
