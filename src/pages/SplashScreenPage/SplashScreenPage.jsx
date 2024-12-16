@@ -10,7 +10,7 @@ function SplashScreenPage() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // setIsSplash(false);
+            setIsSplash(false);
         }, 3000);
 
         return () => clearTimeout(timer);
