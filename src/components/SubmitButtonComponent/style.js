@@ -10,4 +10,7 @@ export const SubmitButton = styled.button`
     color: #000000;
     background-color: #3ebeee;
     box-shadow: 0 10px 10px -10px;
+    &:active {
+        opacity: 0.8;
+    }
 `
