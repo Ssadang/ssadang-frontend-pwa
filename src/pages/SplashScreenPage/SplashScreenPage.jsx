@@ -23,13 +23,13 @@ function SplashScreenPage() {
     }, [isSplash]);
 
     return (
-        <Container>
+        <>
             <GlobalStyle />
             <Logo>
                 <img src={splashLogo} alt="splashLogo" />
             </Logo>
             <Title>SSADANG</Title>
-        </Container>
+        </>
     )
 }
 

@@ -13,16 +13,18 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes>
-        <Route path="/*" element={
-          <>
-            <SplashScreenRoute />
-            <AuthRoute />
-            <MainRoute />
-          </>
-        }>
-        </Route>
-      </Routes>
+      <div id='rootContainer'>
+        <Routes>
+          <Route path="/*" element={
+            <>
+              <SplashScreenRoute />
+              <AuthRoute />
+              <MainRoute />
+            </>
+          }>
+          </Route>
+        </Routes>
+      </div>
     </>
   );
 }
