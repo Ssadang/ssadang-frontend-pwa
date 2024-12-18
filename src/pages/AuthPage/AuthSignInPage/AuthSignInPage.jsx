@@ -9,12 +9,12 @@ import { useNavigate } from 'react-router-dom';
 function AuthSignInPage() {
   const navigate = useNavigate();
 
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ showPassword, setShowPassword ] = useState(false);
 
-  const idOnChange = (e) => {
-    setId(e.target.value);
+  const emailOnChange = (e) => {
+    setEmail(e.target.value);
   }
 
   const passwordOnChange = (e) => {
@@ -46,8 +46,8 @@ function AuthSignInPage() {
         <SignInInputTitle>로그인</SignInInputTitle>
         <InputComponent 
           type="text"
-          value={id}
-          onChange={idOnChange}
+          value={email}
+          onChange={emailOnChange}
           placeholder="아이디(이메일) 입력" 
         />
         <InputContainer>
