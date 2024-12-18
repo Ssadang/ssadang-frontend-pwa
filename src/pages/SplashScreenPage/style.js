@@ -120,6 +120,15 @@ export const GlobalStyle = createGlobalStyle`
 }
 `;
 
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+`;
+
 export const Logo = styled.div`
     animation: bounce-in-top 1.1s both;
     width: 300px;
