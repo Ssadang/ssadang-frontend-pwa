@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RevertContainer, SignUpInputContainer } from './style';
 import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
@@ -7,19 +7,29 @@ import SignUpComponent from '../../../components/SignUpComponent/SignUpComponent
 function AuthSignUpPage() {
   const navigate = useNavigate();
 
-  // 회원가입 1
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ passwordCheck, setPasswordCheck ] = useState('');
-  const [ name, setName ] = useState('');
-  const [ nickname, setNickname ] = useState('');
-  const [ location, setLocation ] = useState(null); // select
-  const [ semester, setSemester ] = useState(null); // select
+  const [ stage, setStage ] = useState(1);
 
-  // 회원가입 2
-  const [ emailAuthCode, setEmailAuthCode ] = useState('');
-  const [ authImg, setAuthImg ] = useState(null);
-  
+  const [ inputValue, setInputValue ] = useState({
+    // 회원가입 1
+    email: '',
+    password: '',
+    passwordCheck: '',
+    name: '',
+    nickname: '',
+    areaId: undefined,
+    grade: undefined,
+    // 회원가입 2
+    emailAuthCode: '',
+    proveImgUrl: null
+  });
+
+  const inputChange = (e) => {
+    setInputValue({... inputValue, [e.target.name] : e.target.value});
+  }
+
+  useEffect(() => {
+    console.log(inputValue);
+  }, [inputValue])
 
   const goBackButtonOnClickHandler = () => {
     navigate(-1);
@@ -32,24 +42,10 @@ function AuthSignUpPage() {
       </RevertContainer>
       <SignUpInputContainer>
         <SignUpComponent
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          passwordCheck={passwordCheck}
-          setPasswordCheck={setPasswordCheck}
-          name={name}
-          setName={setName}
-          nickname={nickname}
-          setNickname={setNickname}
-          location={location}
-          setLocation={setLocation}
-          semester={semester}
-          setSemester={setSemester}
-          emailAuthCode={emailAuthCode}
-          setEmailAuthCode={setEmailAuthCode}
-          authImg={authImg}
-          setAuthImg={setAuthImg}
+          stage={stage}
+          setStage={setStage}
+          value={inputValue}
+          onChange={inputChange}
         />
       </SignUpInputContainer>
     </>
