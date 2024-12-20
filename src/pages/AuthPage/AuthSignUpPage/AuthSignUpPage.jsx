@@ -20,7 +20,7 @@ function AuthSignUpPage() {
     grade: undefined,
     // 회원가입 2
     emailAuthCode: '',
-    proveImgUrl: null
+    proveImgUrl: undefined
   });
 
   const inputChange = (e) => {
