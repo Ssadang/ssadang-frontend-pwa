@@ -56,7 +56,7 @@ function AuthMainPage() {
         {/* 대화 상자 숨기기 기본 설정  */}
         <SubmitButtonComponent onClick={() => navigate('/auth/signin')} text="로그인 / 회원가입" />
         <SubmitButtonComponent onClick={() => alert("메인화면 바로가기 버튼 클릭")} text="메인화면 바로가기"/>
-        <SubmitButtonComponent onClick={() => alert("SSADANG 소개 클릭")} text="SSADANG 소개" />
+        <SubmitButtonComponent onClick={() => navigate('/main')} text="SSADANG 소개" />
       </ButtonContainer>
     </Container>
   )
