@@ -5,9 +5,9 @@ import AuthPage from '../../pages/AuthPage/AuthPage';
 function AuthRoute() {
   return (
     <>
-        <Routes>
-            <Route path='/auth' element={ <AuthPage /> } />
-        </Routes>
+      <Routes>
+        <Route path='/auth' element={<AuthPage />} />
+      </Routes>
     </>
   )
 }
