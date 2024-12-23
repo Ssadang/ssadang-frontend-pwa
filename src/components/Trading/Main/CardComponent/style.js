@@ -27,12 +27,12 @@ export const GameButton = styled.button`
   justify-content: center;
   
   width: ${(props) => (props.isFull ? "100px" : "80px")};
-  height: 30px;
+  height: 25%;
   border-radius: 10px;
   border: ${(props) => (props.isFull ? "1px solid #B0B0B0" : "1px solid #3EBEEE ")};
   background-color: ${(props) => (props.isFull ? "#B0B0B0" : "#3EBEEE")};
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   cursor: ${(props) => (props.isFull ? "not-allowed" : "pointer")};
 `;

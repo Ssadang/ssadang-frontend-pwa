@@ -4,6 +4,7 @@ import TradingButton from '../../../components/Trading/Main/ButtonComponent/Trad
 import './style.css';
 import CardComponent from '../../../components/Trading/Main/CardComponent/TradingCardComponent.jsx';
 import { saleDummyData, freeDummyData } from '../../../assets/DummyData/data.js';
+import RegisterButton from '../../../components/Trading/Main/ButtonComponent/RegisterButtonComponent.jsx';
 
 function TradingMainPage() {
 
@@ -25,6 +26,10 @@ function TradingMainPage() {
     //     }
     // };
 
+    const fetchData = () => {
+        // API 호출 또는 더미 데이터 로드
+        setProducts(saleDummyData);
+    };
 
     // useEffect를 사용하여 mode 또는 region 변경 감지 및 데이터 업데이트
     useEffect(() => {
@@ -68,11 +73,13 @@ function TradingMainPage() {
             <div className='CardListContainer'>
                 {products.length > 0 ? (
                     products.map((product) => (
-                        <CardComponent key={product.id} product={product} />
+                        <CardComponent key={product.id} product={product} onReFresh={fetchData} />
                     ))
                 ) : (<p style={{ marginTop: "20px", textAlign: "center" }}>등록된 매물이 없습니다.</p>)}
 
             </div>
+            <RegisterButton />
+
         </div>
     )
 }

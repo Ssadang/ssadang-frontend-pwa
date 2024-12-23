@@ -28,7 +28,7 @@ export const SelectedRegion = styled.div`
   width : 100px;
   align-items: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
 `;
 
 export const ArrowDownWrapper = styled.div`

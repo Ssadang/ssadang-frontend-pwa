@@ -36,3 +36,13 @@
     -ms-overflow-style: none;
     /* IE, Edge */
 }
+
+.fixed-btn {
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    width: 8vw;
+    height: 8vw;
+    cursor: pointer;
+    z-index: 1000;
+}
