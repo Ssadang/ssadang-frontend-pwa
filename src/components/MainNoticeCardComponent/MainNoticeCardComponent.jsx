@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Title } from './style';
+import { FaCarrot } from "react-icons/fa6";
 ;
-function MainNoticeCardComponent() {
+function MainNoticeCardComponent(props) {
   return (
-    <Container>
-      <Title>sadkjhaskjdhasjkdhasjkdashdjkasdhaskjdhkasjdh</Title>
+    <Container onClick={props.onClick}>
+      <FaCarrot />
+      <Title>{props.text}</Title>
     </Container>
   );
 }

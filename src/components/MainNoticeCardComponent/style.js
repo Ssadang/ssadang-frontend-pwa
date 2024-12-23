@@ -2,18 +2,24 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
+    align-items: center;
     flex-grow: 0;
     flex-shrink: 0;
-    flex-direction: column;
+    margin-bottom: 10px;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: #3ebeee;
 `;
 
 export const Title = styled.div`
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
     overflow: hidden;
     text-overflow : ellipsis;
     white-space: nowrap;
-    font-size: 1em;
-    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    color: black;
 `;

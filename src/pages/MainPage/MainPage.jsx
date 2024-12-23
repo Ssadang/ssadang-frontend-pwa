@@ -14,11 +14,19 @@ function MainPage() {
   const navigate = useNavigate();
 
   const tradingProductOnClickHandler = () => {
-    alert('해당 상세 거래 게시판으로 이동합니다.');
+    alert('해당 거래 상세 페이지으로 이동합니다.');
   }
 
   const goTradingButtonOnClickHandler = () => {
-    alert('거래 더 보기 버튼 클릭');
+    alert('거래 더보기 버튼 클릭');
+  }
+
+  const noticeDetailOnClickHander = () => {
+    alert('해당 공지사항 상세 페이지로 이동합니다.')
+  }
+
+  const goNoticeButtonOnClickHandler = () => {
+    alert('공지사항 더보기 버튼 클릭')
   }
 
   return (
@@ -82,11 +90,15 @@ function MainPage() {
       <NoticeContainer>
         <Title>최신 공지사항</Title>
         <NoticeListContainer>
-          <MainNoticeCardComponent />
-
+          {/* 공지사항 등록 최신순 5개 preview */}
+          <MainNoticeCardComponent onClick={noticeDetailOnClickHander} text='고양이 장패드 팔아요' />
+          <MainNoticeCardComponent onClick={noticeDetailOnClickHander} text='고양이 장패드 팔아요' />
+          <MainNoticeCardComponent onClick={noticeDetailOnClickHander} text='고양이 장패드 팔아요' />
+          <MainNoticeCardComponent onClick={noticeDetailOnClickHander} text='고양이 장패드 팔아요' />
+          <MainNoticeCardComponent onClick={noticeDetailOnClickHander} text='고양이 장패드 팔아요' />
         </NoticeListContainer>
         <SubTitle>공지사항이 더 궁금하신가요?</SubTitle>
-        <SubmitButtonComponent onClick={goTradingButtonOnClickHandler} text='공지사항 더보기' />
+        <SubmitButtonComponent onClick={goNoticeButtonOnClickHandler} text='공지사항 더보기' />
       </NoticeContainer>
     </Container>
   )
