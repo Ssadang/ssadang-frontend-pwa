@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import { FaChevronLeft } from "react-icons/fa";
 import { PiEyesFill } from "react-icons/pi";
+import { MdCheckCircle } from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -44,7 +45,7 @@ function MainPage() {
         <TrandingContainer>
           <TitleContainer>
             <Title>최신 거래</Title>
-            <PiEyesFill/>
+            <Title><PiEyesFill/></Title>
           </TitleContainer>
           <TrandingProductListContainer>
             <Swiper
@@ -103,6 +104,7 @@ function MainPage() {
         <NoticeContainer>
           <TitleContainer>
             <Title>최신 공지사항</Title>
+            <MdCheckCircle />
           </TitleContainer>
           <NoticeListContainer>
             {/* 공지사항 등록 최신순 5개 preview */}

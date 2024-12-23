@@ -37,6 +37,7 @@ export const TitleContainer = styled.div`
     font-size: 2em;
     font-weight: bold;
     align-items: center;
+    color: #3ebeee;
 `;
 
 export const Title = styled.div`
