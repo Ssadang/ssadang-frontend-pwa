@@ -69,15 +69,20 @@ function TradingDetailPage() {
     return (
         <div className="page-container"> {/* 최상위 컨테이너 */}
             <div className="container-detail">
+
                 <NavBar isScrolled={isScrolled} />
                 <ProductImg images={img} />
+
                 <UserBar />
+
                 <ProductInfo data={productData} />
+
                 <ItemsBarComponent username={productData.username} />
                 <ItemsComponent items={UserProductData} />
                 <ItemsBarComponent />
                 <ItemsComponent items={SameCategoryItems} />
             </div>
+
         </div>
     );
 }
