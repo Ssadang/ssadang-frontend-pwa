@@ -8,12 +8,12 @@ import AuthFindUserInfoPage from '../../pages/AuthPage/AuthFindUserInfoPage/Auth
 function AuthRoute() {
   return (
     <>
-        <Routes>
-            <Route path='/auth' element={ <AuthMainPage /> } />
-            <Route path='/auth/signin' element={ <AuthSignInPage /> } />
-            <Route path='/auth/signup' element={ <AuthSignUpPage /> } />
-            <Route path='/auth/finduserInfo' element={ <AuthFindUserInfoPage /> } />
-        </Routes>
+      <Routes>
+        <Route path='/auth' element={<AuthMainPage />} />
+        <Route path='/auth/signin' element={<AuthSignInPage />} />
+        <Route path='/auth/signup' element={<AuthSignUpPage />} />
+        <Route path='/auth/finduserInfo' element={<AuthFindUserInfoPage />} />
+      </Routes>
     </>
   )
 }

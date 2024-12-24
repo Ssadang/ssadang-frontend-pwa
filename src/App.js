@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import SplashScreenRoute from './routes/SplashScreenRoute/SplashScreenRoute';
 import AuthRoute from './routes/AuthRoute/AuthRoute';
 import MainRoute from './routes/MainRoute/MainRoute';
+import TradingRoute from './routes/TradingRoute/TradingRoute';
 
 const GlobalStyle = createGlobalStyle`${reset}`; // Cross Browsing
 
@@ -20,6 +21,7 @@ function App() {
               <SplashScreenRoute />
               <AuthRoute />
               <MainRoute />
+              <TradingRoute />
             </>
           }>
           </Route>
