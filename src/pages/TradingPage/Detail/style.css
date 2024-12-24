@@ -1,0 +1,19 @@
+.page-container {
+    overflow-y: auto;
+    /* 스크롤 활성화 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    /* 페이지 배경 */
+}
+
+.container-detail {
+    height: 100%;
+    width: 100%;
+    max-width: 430px;
+    background-color: #fff;
+    /* 콘텐츠 배경 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 */
+}
