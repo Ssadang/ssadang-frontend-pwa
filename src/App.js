@@ -14,17 +14,19 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes>
-        <Route path="/*" element={
-          <>
-            <SplashScreenRoute />
-            <AuthRoute />
-            <MainRoute />
-            <TradingRoute />
-          </>
-        }>
-        </Route>
-      </Routes>
+      <div id='rootContainer'>
+        <Routes>
+          <Route path="/*" element={
+            <>
+              <SplashScreenRoute />
+              <AuthRoute />
+              <MainRoute />
+              <TradingRoute />
+            </>
+          }>
+          </Route>
+        </Routes>
+      </div>
     </>
   );
 }
