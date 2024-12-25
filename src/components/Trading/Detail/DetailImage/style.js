@@ -32,7 +32,9 @@ export const Pagination = styled.div`
     gap: 5px;
 `;
 
-export const Dot = styled.div`
+export const Dot = styled.div.attrs(() => ({
+    "data-testid": "styled-div", // 테스트용 속성
+}))`
     width: 10px;
     height: 10px;
     background-color: ${({ isActive }) => (isActive ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
