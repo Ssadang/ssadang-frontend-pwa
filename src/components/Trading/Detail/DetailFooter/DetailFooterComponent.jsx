@@ -5,9 +5,6 @@ const DetailFooterComponent = ({ productData, onJoinClick, onChatClick, onHeartD
 
     const { isGame, maxParticipants, currentParticipants, price, isLiked, likes } = productData;
 
-
-
-
     const isGameAvailable = isGame && currentParticipants < maxParticipants;
 
     const priceText =

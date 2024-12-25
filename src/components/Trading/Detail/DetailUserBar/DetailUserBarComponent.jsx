@@ -1,12 +1,14 @@
 import React from 'react'
-import { Container, RightContainer, LeftContainer, Text, UserImg, Emoji } from './style.js';
+import { Container, RightContainer, LeftContainer, Text, ImageContainer, UserImg, Emoji } from './style.js';
 
 function UserBarComponent() {
     return (
         <Container>
             <LeftContainer>
-                <UserImg src="/img/image1.jpg" />
-                <Text>유저네임</Text>
+                <ImageContainer>
+                    <UserImg src="/img/image1.jpg" />
+                </ImageContainer>
+                <Text style={{ width: "50%" }}>유저네임</Text>
 
             </LeftContainer>
             <RightContainer>

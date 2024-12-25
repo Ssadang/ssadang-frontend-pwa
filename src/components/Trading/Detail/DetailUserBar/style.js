@@ -6,7 +6,7 @@ export const Container = styled.div`
     max-width : 430px;
     box-sizing: border-box; /* 여백 포함 크기 계산 */
     padding: 10px 10px;
-    height : 20%;
+    height : 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const LeftContainer = styled.div`
     display : flex;
     align-items: center;
-    width : 40%;
+    width : 50%;
     gap : 10px;
 `;
 
@@ -29,13 +29,18 @@ export const Text = styled.span`
     color : #333;
 `
 
+export const ImageContainer = styled.div`
+    width: 14vw;
+    height: 10vh;
+    border-radius: 50%; /* circular container */
+    overflow: hidden; /* ensures the image stays within the container */
+`;
+
 export const UserImg = styled.img`
-    width:38%;
-    height:38%;
-    border-radius:50%;
-    object-fit : cover;
-    margin : auto;
-`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
 
 export const RightContainer = styled.div`
     display : flex;

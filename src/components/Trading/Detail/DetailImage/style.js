@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SliderContainer = styled.div`
     position: relative;
@@ -10,10 +10,16 @@ export const SliderContainer = styled.div`
     display: flex;
 `;
 
-export const SlideTrack = styled.div`
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    transform: ${({ currentIndex }) => `translateX(-${currentIndex * 100}%)`};
+export const SlideTrack = styled.div.withConfig({
+    shouldForwardProp: (prop) => prop !== "currentIndex",
+})`
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+
+  ${({ currentIndex }) =>
+        css`
+      transform: translateX(-${currentIndex * 100}%);
+    `}
 `;
 
 export const SlideImage = styled.img`
@@ -32,9 +38,9 @@ export const Pagination = styled.div`
     gap: 5px;
 `;
 
-export const Dot = styled.div.attrs(() => ({
-    "data-testid": "styled-div", // 테스트용 속성
-}))`
+export const Dot = styled.div.withConfig({
+    shouldForwardProp: (prop) => prop !== "isActive",
+})`
     width: 10px;
     height: 10px;
     background-color: ${({ isActive }) => (isActive ? '#fff' : 'rgba(255, 255, 255, 0.5)')};

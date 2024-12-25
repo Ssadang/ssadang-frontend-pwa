@@ -29,6 +29,10 @@ const DetailImageComponent = ({ images, children }) => {
         }
     };
 
+    console.log(images);
+
+    console.log(currentIndex)
+
     return (
         <SliderContainer
             onTouchStart={handleTouchStart}
@@ -36,7 +40,7 @@ const DetailImageComponent = ({ images, children }) => {
             onTouchEnd={handleTouchEnd}
         >
             {/* 이미지 트랙 */}
-            <SlideTrack $currentIndex={currentIndex}>
+            <SlideTrack currentIndex={currentIndex}>
                 {images.map((src, index) => (
                     <SlideImage key={index} src={src} alt={`Slide ${index + 1}`} />
                 ))}
@@ -46,7 +50,7 @@ const DetailImageComponent = ({ images, children }) => {
             {/* 페이지네이션 */}
             <Pagination>
                 {images.map((_, index) => (
-                    <Dot key={index} $isActive={index === currentIndex} />
+                    <Dot key={index} isActive={index === currentIndex} />
                 ))}
             </Pagination>
         </SliderContainer>
