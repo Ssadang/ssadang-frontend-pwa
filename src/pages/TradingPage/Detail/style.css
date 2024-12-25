@@ -12,6 +12,7 @@
     width: 100%;
     max-width: 430px;
     height: 100vh;
+    padding-bottom: 60px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     /* iOS 터치 스크롤 부드럽게 *
