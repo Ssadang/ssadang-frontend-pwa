@@ -1,0 +1,33 @@
+.page-container {
+    /* 스크롤 활성화 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    height: 100%;
+    /* 페이지 배경 */
+}
+
+.container-detail {
+    width: 100%;
+    max-width: 430px;
+    height: 100vh;
+    padding-bottom: 60px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* iOS 터치 스크롤 부드럽게 *
+     /* 스크롤 바 숨기기 */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE, Edge */
+    background-color: #fff;
+    /* 콘텐츠 배경 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 */
+}
+
+.container-detail::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
