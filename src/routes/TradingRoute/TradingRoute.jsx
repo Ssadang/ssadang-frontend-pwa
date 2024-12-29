@@ -1,6 +1,7 @@
 import React from 'react'
 import TradingMainPage from '../../pages/TradingPage/Main/TradingMainPage'
 import TradingDetailPage from '../../pages/TradingPage/Detail/TradingDetailPage';
+import TradingRegisterPage from '../../pages/TradingPage/Register/TradingRegisterPage';
 import { Routes, Route } from 'react-router-dom';
 
 function TradingRoute() {
@@ -9,6 +10,7 @@ function TradingRoute() {
             <Routes>
                 <Route path="/trading" element={<TradingMainPage />} />
                 <Route path="/trading/detail/:id" element={<TradingDetailPage />} />
+                <Route path="/trading/register" element={<TradingRegisterPage />} />
             </Routes>
         </>
     )

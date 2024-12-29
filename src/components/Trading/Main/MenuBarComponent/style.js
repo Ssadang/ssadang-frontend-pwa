@@ -4,14 +4,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   width: 100%;
+  height: 100%; // 모바일 상단바 높이 예시
   max-width : 430px;
-  height: 50px; // 모바일 상단바 높이 예시
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
   box-sizing: border-box;
-  border-bottom: 1px solid #ccc;
   background-color: #fff;
   font-family: sans-serif;
 `;

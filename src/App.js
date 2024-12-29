@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`${reset}`; // Cross Browsing
 function App() {
   const location = useLocation();
 
-  const footerCheck = !(location.pathname === '/' || location.pathname.startsWith('/auth'));
+  // const footerCheck = !(location.pathname === '/' || location.pathname.startsWith('/auth'));
 
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
           }>
           </Route>
         </Routes>
-        {footerCheck && <Footer />}
+        {/* {footerCheck && <Footer />} */}
       </div>
     </>
   );

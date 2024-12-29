@@ -12,7 +12,7 @@ import {
     HeartNumber,
     GameButton,
 } from './style';
-import ModalComponent from '../../Modal/ModalComponent';
+import ModalComponent from '../../Modal/Detail/ModalComponent';
 import HeartImg from '../../../../assets/icons/heart.svg';
 import ChatImg from '../../../../assets/icons/chat.svg';
 import { useNavigate } from 'react-router-dom';
