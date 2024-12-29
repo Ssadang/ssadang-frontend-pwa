@@ -47,14 +47,16 @@ function TradingMainPage() {
 
 
     return (
-        <div className='container'>TestPage
-            <MenuBar
-                selectedRegion={selectedRegion}
-                onRegionChange={(region) => {
-                    setSelectedRegion(region);
-                    setSelectedMode("판매");
-                }}>
-            </MenuBar>
+        <div className='container'>
+            <div className="menuBar">
+                <MenuBar
+                    selectedRegion={selectedRegion}
+                    onRegionChange={(region) => {
+                        setSelectedRegion(region);
+                        setSelectedMode("판매");
+                    }}>
+                </MenuBar>
+            </div>
             <div className="subBar">
                 <TradingButton
                     isSelected={selectedMode === "판매"}
