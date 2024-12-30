@@ -27,7 +27,7 @@ export const RouteButton = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    color: ${(props) => (props.focus ? '#3ebeee' : 'black')};
+    color: ${(props) => (props.className === 'active' ? '#3ebeee' : 'black')};
 `;
 
 export const Title = styled.div`
