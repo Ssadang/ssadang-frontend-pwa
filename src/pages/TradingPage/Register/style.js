@@ -159,7 +159,9 @@ export const ToggleButton = styled.div`
   width : 95%;
 `;
 
-export const GameToggleButton = styled.button`
+export const GameToggleButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "active",
+})`
   padding: 10px;
   border: 1px solid #3EBEEE;
   background-color: ${({ active }) => (active ? "#3EBEEE" : "#fff")};

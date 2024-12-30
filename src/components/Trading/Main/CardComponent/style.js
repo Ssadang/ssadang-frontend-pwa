@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductButton = styled.button`
+export const ProductContainer = styled.div`
   width: 100%;
   max-width: 430px;
   padding: 16px;
@@ -9,16 +9,29 @@ export const ProductButton = styled.button`
   gap: 16px;
   border: none;
   border-bottom: 1px solid #d9d9d9;
-  position: relative;
   background: none;
   color: inherit;
   font: inherit;
-  cursor: pointer;
-  outline: inherit;
   text-align: left;
+  cursor: pointer;
 `;
 
-export const GameButton = styled.button`
+export const ProductContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  cursor: pointer;
+`;
+
+export const GameButtonWrapper = styled.div`
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+`;
+
+export const GameButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "isFull",
+})`
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -29,7 +42,7 @@ export const GameButton = styled.button`
   width: ${(props) => (props.isFull ? "100px" : "80px")};
   height: 25%;
   border-radius: 10px;
-  border: ${(props) => (props.isFull ? "1px solid #B0B0B0" : "1px solid #3EBEEE ")};
+  border: ${(props) => (props.isFull ? "1px solid #B0B0B0" : "1px solid #3EBEEE")};
   background-color: ${(props) => (props.isFull ? "#B0B0B0" : "#3EBEEE")};
   color: #ffffff;
   font-size: 16px;
@@ -37,18 +50,18 @@ export const GameButton = styled.button`
   cursor: ${(props) => (props.isFull ? "not-allowed" : "pointer")};
 `;
 
+
 export const ProductImg = styled.img`
   width: 110px;
   height: 110px;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius : 10px;
+  border-radius: 10px;
 `;
 
 export const ProductInfo = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
 export const ProductTitle = styled.h3`

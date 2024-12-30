@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "isSelected",
+})`
   width: 25%;
   height : 85%;
   padding: 5px;

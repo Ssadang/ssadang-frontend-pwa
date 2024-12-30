@@ -14,3 +14,15 @@ export const createPost = async (formData) => {
         throw error;
     }
 };
+
+
+// 기프티콘 호출 (게시물 등록)
+
+export const fetchGiftcons = async () => {
+    try {
+        const response = await axios.get("/api/giftcon"); // 백엔드 API 요청
+        return response.data; // 데이터를 반환
+    } catch (error) {
+        throw new Error("기프티콘 데이터를 불러오는 데 실패했습니다."); // 에러 처리
+    }
+};
