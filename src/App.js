@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`${reset}`; // Cross Browsing
 
 function App() {
   const location = useLocation();
-  const footerCheck = !(location.pathname === '/' || location.pathname.startsWith('/auth'));
+  const footerCheck = !(location.pathname === '/' || location.pathname.startsWith('/auth') || location.pathname === '/trading/register');
 
   return (
     <>
