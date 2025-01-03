@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FileLabel, FilePreview, FilePreviewImg, Input } from './style';
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { s3Upload } from '../../hooks/s3Upload';
 
 function InputComponent(props) {
   const [ filePreview, setFilePreview ] = useState(null);
@@ -14,12 +15,13 @@ function InputComponent(props) {
       };
       reader.readAsDataURL(file);
     }
+    s3Upload(file);
   }
 
-  // useEffect(() => {
-  //   console.log(filePreview);
-  // }, [filePreview])
-
+  const handleFileClick = () => {
+    // 미리보기 클릭 시 파일 선택 input을 클릭하도록 설정
+    document.getElementById(props.name).click();
+  };
 
   return (
     <>
@@ -41,7 +43,7 @@ function InputComponent(props) {
       }
       {
         filePreview && 
-        <FilePreview>
+        <FilePreview onClick={handleFileClick}>
           <FilePreviewImg src={filePreview} alt='filePreviewImg' />
         </FilePreview>
       }

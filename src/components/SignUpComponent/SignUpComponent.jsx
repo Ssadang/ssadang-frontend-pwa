@@ -8,6 +8,8 @@ import { GRADE } from '../../constants/grade';
 import { useInput } from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
 import { FaCarrot } from "react-icons/fa6";
+import { authPostEmailCheck, authPostSignUp } from '../../apis/api/auth/auth';
+import { useMutation } from '@tanstack/react-query';
 
 function SignUpComponent(props) {
     const navigate = useNavigate();
@@ -29,6 +31,35 @@ function SignUpComponent(props) {
     // 인증(Stage 2)
     const [ emailAuthCodeCheckFlag, setEmailAuthCodeCheckFlag ] = useState(false);
 
+    // 이메일 인증 코드 확인
+    const authEmailCodeCheck = useMutation({
+        mutationKey: 'authEmailCodeCheck',
+        mutationFn: authPostEmailCheck,  
+        onSuccess: response => {
+            alert('이메일 인증 코드 확인이 완료되었습니다.');
+            setEmailAuthCodeCheckFlag(true);
+        },
+        onError: error => {
+            alert('유효하지 않은 인증 코드입니다. 다시 입력해주세요.');
+            setEmailAuthCodeCheckFlag(false);
+            console.log(error);
+        }
+    })
+
+    // 회원가입
+    const authSignUp = useMutation({
+        mutationKey: 'authSignUp',
+        mutationFn: authPostSignUp,
+        onSuccess: response => {
+            alert('회원가입이 완료되었습니다.');
+            props.setStage(3);
+        },
+        onError: error => {
+            alert('오류가 발생하였습니다. 다시 해당 서비스를 이용해주세요.');
+        }
+    });
+
+
     const submitButtonOnClickHandler = () => {
         if(props.stage === 1) {
             if(
@@ -40,20 +71,30 @@ function SignUpComponent(props) {
                 gradeFlag
             ) {
                 props.setStage(2);
-                alert('2단계로 갑시다.');
+                alert('다음 회원가입 단계로 이동합니다.');
             }else {
                 alert('회원가입 정보를 다시 확인해주세요.');
             }
         } else if(props.stage === 2) {
             console.log(emailAuthCodeCheckFlag);
-            console.log(props.value.proveImgUrl);
+            console.log(props.value.proveImg);
             
             if(
                 emailAuthCodeCheckFlag &&
-                props.value.proveImgUrl
+                props.value.proveImg
             ) {
-                props.setStage(3);
-                alert('3단계로 갑시다.');
+                // props.setStage(3);
+                // alert('3단계로 갑시다.');
+                authSignUp.mutate({
+                    email: props.value.email,
+                    password: props.value.password,
+                    name: props.value.name,
+                    nickname: props.value.nickname,
+                    areaId: props.value.areaId,
+                    grade: props.value.grade,
+                    proveImg: props.value.proveImg,
+                    profileImg: null
+                })
             }else {
                 alert('회원가입 정보를 다시 확인해주세요.');
             }
@@ -69,10 +110,10 @@ function SignUpComponent(props) {
             alert('인증 코드를 입력해주세요.')
             return;
         }else {
-            // 인증코드가 일치할 때
-            alert('인증 완료되었습니다.');
-            setEmailAuthCodeCheckFlag(true);
-            // 인증코드가 일치하지 않을 때
+            authEmailCodeCheck.mutate({
+                email: props.value.email,
+                authNumber: props.value.emailAuthCode
+            })
         }
     }
 
@@ -218,8 +259,8 @@ function SignUpComponent(props) {
                             </AuthTextContainer>
                             <InputComponent
                                 type='file'
-                                name='proveImgUrl'
-                                value={props.value.proveImgUrl}
+                                name='proveImg'
+                                value={props.value.proveImg}
                                 onChange={props.onChange}
                             />
                         </>
